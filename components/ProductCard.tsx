@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { deleteProduct } from "@/app/products/products.api";
 
 import { useProductContext } from "@/context/productContext";
-import { EditProductDialog } from "./EditProductDialog";
+import { ProductDialog } from "./ProductDialog";
 
 interface ProductCardProps {
   id: number;
@@ -56,9 +56,7 @@ export default function ProductCard({
           <Button variant="destructive" onClick={handleDelete}>
             Delete
           </Button>
-          <EditProductDialog
-            product={{ id, name, price, description, image }}
-          />
+          <ProductDialog mode={"create"} />
         </CardFooter>
       </Card>
     </>
